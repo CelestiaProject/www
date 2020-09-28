@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Celestia: Lua Universal Tools</title>
+		<meta name="description" content="Lua Universal Tools - это многофункциональный графический интерфейс, добавляющий в программу много удобных возможностей. А самое главное, что он значительно упрощает использование Celestia даже для детей." />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="/">Celestia</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="./index.html">Главная</a></li>
+							<li><a href="./download.html">Скачать</a></li>
+							<li><a href="./news.html">Новости</a></li>
+							<li>
+								<a href="#">Документация</a>
+								<ul>
+									<li><a href="./guides.html">Руководства</a></li>
+									<li><a href="./faq.html">FAQ</a></li>
+									<li><a href="./sites.html">Сайты по теме</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Дополнения</a>
+								<ul>
+									<li><a href="./addons.html">Ресурсы с дополнениями</a></li>
+									<li>
+										<a href="#">LUA Tools</a>
+										<ul>
+											<li><a href="./lua-universal-tools.html">LUA Universal Tools</a></li>
+											<li><a href="./lua-other.html">Другие</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Утилиты</a>
+										<ul>
+											<li><a href="./config-manager.html">Менеджер конфигурации Celestia</a></li>
+											<li><a href="./utilites.html">Другие</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="./gallery.html">Галерея</a></li>
+							<li><a href="/forum">Форум</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Lua Universal Tools</h2>
+							<p>Lua Universal Tools - это расширенная версия Lua Edu Tools.</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+                                <p>
+                        	    <span class="image left"><img src="/images/lut-gui.jpg" alt="Lua Universal Tools for Celestia"></span>
+                        	    Графический интерфейс Lua Universal Tools v5.0 beta 2 (далее LUT-5) разработан для программы Celestia. Управление Celestia осуществляется при помощи клавиатурных команд. Всего клавиатурных команд - 129. Некоторые функции не имеют клавиатурных команд. Управление этими функциями предусмотрено при помощи экранного меню. Некоторые функции имеют двойное управление при помощи экранного меню и при помощи клавиатурных команд. Большое количество клавиатурных команд оказывает значительные неудобства в работе с Celestia.
+                                <br/><br/>
+                                Программистами Vincent Giangiulio и Hank Ramsey 2007 году был разработан графический интерфейс Lua Edu Tools v1.2 бета 8. Lua Edu Tools (далее LET) была разработана в первую очередь для использования в образовательных учреждениях (школах, институтах, университетах) и предназначалась для облегчения работы пользователя с программой Celestia. Со временем это дополнение к Celestia быстро завоевало популярность и среди обычных пользователей, так как придавала программе дополнительные функции, которые отсутствовали в официальной версии.
+                                <br/><br/><br/>
+                                Начиная с 2013 года, LET модернизировалась, приобретя новое название - Lua Universal Tools.
+                            	<span class="image fit"><img src="/images/lut-full.jpg" alt="Lua Universal Tools for Celestia"></span>
+                            	<h3>Новые инструменты в Lua Universal Tools v4.0:</h3>
+                                <ul>
+                                    <li>Виртуальная база астероидов и комет (ВиДиБа)</li>
+                                    <li>Точки Лагранжа - аддон</li>
+                                    <li>Космический лифт</li>
+                                    <li>Информационные панели</li>
+                                </ul>
+                                <h3>Новое в Lua Universal Tools v5.0:</h3>
+                                <b>Автопилот (модернизированный блок "Компас&Джойстик")</b>
+                                <br/>
+                                <span class="image left"><img src="/images/lut-ap.jpg" alt="Lua Universal Tools Auto-Pilot"></span>
+                                На экран теперь выводятся:<br/>
+                                - Кнопки с красной рамкой - аналог команд Shift + стрелки. Когда вы нажимаете на одну из четырех, начинается орбитальное движение вокруг планеты (или другого объекта).<br/>
+                                - Кнопка [>>>] устанавливает время одного оборота вокруг объекта в секундах (360-300-270-240-210-180-150-120-90-60-30-20-10-5). Кнопки [<] / [>] предназначены для коррекции времени -10/+ 10 секунд, с интервалом 60 секунд и более, -5/+5 с интервалом менее 30 секунд.<br/>
+                                - В верхней части ползунка отображается орбитальная скорость в км/сек.<br/><br/>
+                                <b>Планетография (Celestia) / Планетная номеклатура (LUT-5)</b><br/>
+                                <span class="image left"><img src="/images/lut-planetography.jpg" alt="Lua Universal Tools Nomenclature planetary"></span>
+                                Панель "Планетография" (Celestia) содержит 10 чекбоксов (10 типов локаций).<br/>"Планетная номеклатура" (LUT-5) содержит 80 чекбоксов (80 типов локаций). Эта панель позволяет включать/отключать каждый тип локаций отдельно.<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                Графический интерфейс Lua Universal Tools v5 занимает самую малую площадь на экране из всех версий. При запуске Celestia графический интерфейс имеет вид:
+                                <span class="image fit"><img src="/images/lut-short.jpg" alt="Lua Universal Tools for Celestia"></span>
+                                Графический интерфейс расположен в верхнем правом углу экрана. Элементы управления расположены на 9 строках
+                                При работе с монитором меньшего размера графический интерфейс LUT-5 меняет режимы.
+                                Допустимый минимальный размер экрана (окна), при которых сохраняется геометрия панелей элементов управления LUT-5 равен 900x750 пикс.<br/>
+                                Все панели перемещаются по экрану при помощи мыши, зацепом за шапку панели. Все панели включаются / отключаются индивидуально. При сворачивании окна и распахивании окна на весь экран пульт управления выстраивается в ряд в низу экрана.<br/><br/>
+                                <b>Сравнительные параметры LET/LUT-5:</b>
+                                <ul>
+                                    <li>Всего клавиатурных команд = 129</li>
+                                    <li>LET заменяет 50 клавиатурных команд, это ~40%.</li>
+                                    <li>LUT-5 заменяет 112 клавиатурных команд это ~90%!</li>
+                                </ul>
+                                <b>Кроме этого:</b>
+                                <ul>
+                                    <li>в LET есть 35 инструментов и функций</li>
+                                    <li>в LUT-5.2 есть 96 инструментов и функций, это ~ в 3 раза больше!</li>
+                                </ul>
+                                <b>Вместе с LUT-5 Celestia легко доступна для любителей астрономии от 7 до 70 лет и старше!</b>
+                                <hr/>
+                                <b>Подготовка к установке:</b><br/>
+                                1. Удалить из папки Celestia:
+                                <ul>
+                                    <li>папку "Lua_edu_tools" (если есть)</li>
+                                </ul>
+                                2. Отредактировать файл celestia.cfg:
+                                <ul>
+                                    <li>Добавить строку: <code>LuaHook "luahookinit.lua"</code></li>
+                                    <li>Изменить строку: <code>ExtrasDirectories ["lua-applications" "extras" "extras-standard"]</code></li>
+                                </ul>
+                                <b>Установка lut5-basic.zip для Celestia 1.6.1:</b>
+                                <ol>
+                                    <li>Распаковать архив lut5-basic.zip в папку "Celestia" и подтвердить замену файлов</li>
+                                    <li>Запустить Celestia</li>
+                                </ol>
+                                <b>Установка lut5-additions.zip (если необходимо)</b>
+                                <ol>
+                                    <li>Распаковать архив lut5-additions.zip в папку "Celestia" и подтвердить замену файлов</li>
+                                    <li>Запустить Celestia</li>
+                                </ol>
+                                <ul>
+                                    <li><a href="/forum/viewtopic.php?f=39&t=18542" target="_blank">Подробное описание и доп. материалы</a> (на русском)</li>
+                                    <li><a class="icon fa-download" href="/cc/lut5-basic"> Скачать lut5-basic.zip</a></li>
+                                    <li><a class="icon fa-download" href="/cc/lut5-additions"> Скачать lut5-additions.zip</a></li>
+                                </ul>
+							</section>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/CelestiaProject" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/CelestiaProject/Celestia" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:team@celestia.space" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+                    <script type="text/javascript">
+                    new Image().src = "//counter.yadro.ru/hit?r"+
+                    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                    ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                    screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                    ";h"+escape(document.title.substring(0,150))+
+                    ";"+Math.random();</script>
+                    <img src="//counter.yadro.ru/logo?23.10"
+                    title="Number of visitors today"
+                    alt="" border="0" width="88" height="15"/>
+					<ul class="copyright">
+						<li>Celestia is Copyright &copy; 2001-<script type="text/javascript">document.write(new Date().getFullYear())</script>, Celestia Development Team.</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/skel.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>

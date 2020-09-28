@@ -1,0 +1,218 @@
+<html>
+<head>
+	<title>Celestia 1.5.0 Feature Summary</title>
+</head>
+<body>
+<h1>Celestia 1.5.0 Feature Summary</h1>
+
+Download Celestia for <a href="http://sourceforge.net/project/showfiles.php?group_id=21302">Windows, MacOS X, or Linux</a>
+<br>
+Visit the <a href="../">main Celestia web site</a> or the <a href="../forum">Celestia forum</a>
+
+<h2>Rendering</h2>
+All of the following are relevant just for the OpenGL 2.0 render path:
+<ul>
+<li>Added support for specular textures an normal maps for meshes</li>
+<li>Enabled display of eclipse shadows cast onto meshes</li>
+<li>Enabled per-pixel specular lighting for higher-quality specular highlights,
+   i.e. fewer tessellation artifacts. This is especially noticeable with
+    low polygon models with specular materials.</li>
+<li>Normal maps and specular materials can now be applied at the same time,
+    for 'bumpy-shiny' effects</li>
+<li>Simulated scattering, for much more realistic rendering of planetary
+    atmospheres.</li>
+<li>Implemented a Lunar-Lambert photometric model for more realistic rendering
+    of dust covered bodies such as the moon.</li>
+<li>Added support for compressed normal maps; eliminates the need to use huge
+    amounts of texture memory for high quality normal maps</li>
+</ul>
+
+
+<h2>Flexible reference frames</h2>
+<ul>
+<li>Celestia now supports flexible reference frames for specifying object
+    trajectories and orientations. This makes it easier to import new objects
+    into Celestia that have orbits defined in some reference frame other than
+    the default ones enforced in 1.4.1.</li>
+<li>New reference frames:
+<ul>
+    <li>J2000Ecliptic: defined by the ecliptic and equinox of J2000.0. This
+      is the default for objects orbiting stars. It may now be specified for
+      other objects as well.</li>
+    <li>J2000Equator: defined by the Earth equator and ecliptic of J2000.0.</li>
+    <li>MeanEquator: reference frame defined by the equator of some arbitrary
+      object. This was previously the default and only reference frame available
+      for solar system bodies that didn't directly orbit stars.</li>
+    <li>BodyFixed: a reference frame that rotates with smoe specified object</li>
+    <li>TwoVector: a flexible system for defining reference frames based on two
+      vectors, either a constant vector, object-to-object direction, or
+      velocity vector. Useful for local attitude frames (among other things.)</li>
+</ul></li>
+  <li>Separate reference frames may be defined for the position and orientation
+    of an object. As an example, it may be useful to specify the trajectory of
+    an Earth-orbiting satellite in an Earth equatorial frame while its attitude
+    is specified in an LVLH frame.</li>
+  <li>A new solar system object called a ReferencePoint is available. This is
+    useful for defining the origin of a reference frame that doesn't happen
+    to lie at the center of a planet, moon, or spacecraft.
+  </li>
+</ul>
+
+
+<h2>New trajectory types</h2>
+<ul>
+<li>FixedPosition: For placing an object at a fixed point within its reference
+    frame.</li>
+<li>ScriptedOrbit: Allows the position of an object to be controlled by a Lua
+    script.</li>
+<li>SampledTrajectory: A more flexible version of SampledOrbit, with the option
+    to specify single or double precision and cubic or linear interpolation.</li>
+</ul>
+
+<h2>New rotation models</h2>
+<ul>
+<li>In previous versions of Celestia, all objects rotated uniformly about a
+    single axis (with optional precession about the z-axis.) Celestia 1.5.0
+    introduces the concept of a generic rotation model, which is some function
+    that specifies the orientation of an object over time.</li>
+<li>Rotation models available in Celestia 1.5.0:
+<ul>
+    <li>FixedRotation: For an object with an orientation that remains fixed
+      within its reference frame. This was a notable omission in older version
+      of Celestia.</li>
+    <li>UniformRotation: Describes a rotation of a constant rate about a fixed
+      axis.</li>
+    <li>PrecessingRotation: UniformRotation plus a precession rate.</li>
+    <li>SampledOrientation: Analagous to SampledOrbit for position.
+      SampledOrientation specifies a file of time tagged quaternions which
+      are interpolated to give the orientation of an object.</li>
+    <li>ScriptedRotation: Allows the orientation of an object to be controlled
+      by a Lua script.</li>
+</ul></li></ul>
+
+<h2>Galaxies</h2>
+<ul>
+<li>Catalog improvements:
+<ul>
+<li>Included the complete local group of galaxies.</li>
+<li>Updated catalog so that nearly 100% of galaxies now have distances.</li>
+</ul></li>
+<li>Added support for custom galaxy templates; created a custom Milky Way
+    template with all known galactic arms.</li>
+<li>Improved appearance of Milky Way as seen from Earth.</li>
+<li>Accelerated loading of large catalog files by using an improve name index
+    (measured over 100x performance increase for 100k+ object catalogs)</li>
+<li>Implemented distance-based fading of labels.</li>
+</ul>
+
+
+<h2>Data file updates</h2>
+<ul>
+</li>Extrasolar planets: added about 50 recently discovered extrasolar planets,
+    and revised orbits of known ones based on new data.
+    data.</li>
+<li>Solar System: Added newly discovered outer planet satellites and names.</li>
+<li>Locations: Added new IAU names for features on planets, moons, and asteroids.</li>
+<li>Near stars: Updated near star catalog with latest data from RECONS.</li>
+<li>Binary stars: Updated the binary orbit data in visual and spectroscopic binary
+    catalogs, and included scripts that document the extraction of information
+    in scientific data sets for use in Celestia star catalogs.</li>
+<li>A new set of higher resolution textures was added for the Moon and several
+    satellites of Saturn.</li>
+</ul>
+
+<h2>CELX Scripting improvements</h2>
+<ul>
+<li>OpenGL drawing commands allow scripts to display custom graphics on screen.</li>
+<li>ScriptedOrbits and ScriptedRotations provide hooks for objects to be
+    positioned and oriented with scripts.</li>
+<li>The Lua hook mechanism gives CELX scripts the ability to handle mouse,
+    keyboard, and tick events.</li>
+<li>Many other CELX functions to enable scripts to accomplish much of what
+    used to be possible only by modifying the Celestia source code.</li>
+<li>Scripts may now be loaded quickly from the new Scripts menu.</li>
+<li>Updated CELX interpreter from Lua 5.0 to Lua 5.1.</li>
+</ul>
+
+
+<h2>Accuracy</h2>
+<ul>
+<li>Established Barycentric Dynamical Time (TDB) as the time scale used
+    internally by Celestia.</li>
+<li>Established the origin of Celestia's coordinate system as the Solar System
+    Barycenter and the reference frame as J2000 ecliptical.</li>
+<li>Fixed support for JPL ephemerides. It is now posible to use the JPL
+    DE405 and DE406 ephemerides whenever extremely accurate positions for
+    the Moon and planets are required.</li>
+<li>Added an orbit for the Sun around the solar system barycenter.</li>
+</ul>
+
+
+<h2>SPICE support</h2>
+<ul>
+<li>Celestia can now use extremely accurate planet orbits and spacecraft
+  trajectories available in SPICE SPK files from JPL.</li>
+</ul>
+
+
+<h2>Orbit rendering</h2>
+<ul>
+<li>Orbits are now properly depth sorted with respect to other solar system
+    objects. They are no longer improperly drawn in front of objects that they
+    are behind, and vice versa.</li>
+<li>The jittering of orbit paths viewed at close distances has been reduced.</li>
+<li>Cubic splines are used to reduce the appearance of sharp angles in between
+    orbit segments. This also has the effect of placing the rendered orbit path
+    much closer to the the actual orbit path.</li>
+<li>Star orbit paths are now shown, and may be toggled on and off indepently
+    of the orbits for other objects.</li>
+</ul>
+
+
+<h2>Translation</h2>
+<ul>
+<li>Windows version finally supports multiple languages.</li>
+<li>New translations: Ukrainian, Russian, Arabic, Dutch, Chinese, Korean,
+    Bulgarian.</li>
+<li>All other languages updated.</li>
+<li>Added translations for constellations names.</li>
+</ul>
+
+
+<h2>Miscellaneous</h2>
+<ul>
+<li>Added dynamic star labeling.</li>
+<li>Added support for labeled markers and new marker symbols.</li>
+<li>Enhanced InfoURLs so that they can refer to local files.</li>
+<li>Added the capability to show reference vectors for objects, including
+    frame axes, body axes, velocity vector, and sun direction.</li>
+<li>Made label and line colors customizable via script.</li>
+<li>Better time control: Shift+K and Shift+L can be used to reduce or increase the time rate by a factor of 2.</li>
+</ul>
+
+
+<h2>Bug fixes</h2>
+<ul>
+<li>Fixed the video recording rate on Windows.<li>
+<li>Bad calculation of specular exponent when loading 3DS models. This caused
+    models with specular materials to look very different in Celestia than they
+    did in 3D modeling software.</li>
+<li>Fixed precision problems that caused location labels to disappear and
+    jitter at close range.</li>
+<li>Implemented more robust handling of script errors so that they don't
+    cause Celestia to crash.</li>
+<li>Allow scripts to run before the first frame is rendered so that they can
+    set the starting observer position.</li>
+<li>Switched to double precision for rotation and precession periods; among
+    other things, this keeps synchronous rotators from drifting out of sync.</li>
+<li>Implemented adaptive tesselation for comet tails based on their size on
+    screen. This makes comet tails appear smooth when seen up close.</li>
+<li>Clamped the simulation time to prevent going too far into the past or future.</li>
+<li>Fixed the cmod loader to work properly on 64-bit systems. A nasty bug was
+    preventing 64-bit Linux versions of Celestia from displaying spacecraft.</li>
+<li>Fixed problems with the displayed time rate getting out of sync with the
+    actual time rate.</li>
+</ul>
+
+</body>
+</html>
