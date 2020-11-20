@@ -1,0 +1,112 @@
+Changes since 1.6.1
+
+1.6.2~beta1
+Bug fixes
+* Options dialog is hidden on delete event instead of removed (GTK+ frontend)
+* Fixed crash when loading of a celx script failed
+* Localization support enabled early on startup (GTK+ frontend)
+* Fixed compilation on MIPS platform
+* Add missing gettext calls to make units (km, Kpc, ...) translatable
+* Fixed compilation with modern compilers (Apple Clang, GCC9, LLVM7, MSVC2015)
+* Fixed syntax error in GL2 shader called when there is no light sources
+* First object in Guided Tour can be selected (Windows frontend)
+* Fixed errors reported by PVS studio and Coverity
+* Fixed compilation for 64 bit target of Windows frontend
+* Removed a few deprecations of macOS frontend
+
+Platform-specific changes
+* Unix: GTK+ frontend made translatable
+* Unix: celestia.desktop updated for GTK+ frontend
+* Unix: build infrastructure updated for newer autotools
+* Windows: tilde (~) can be used in filenames to represent home directory
+* Windows: Use Segoe UI font instead of MS Sans Serif in dialogs
+* macOS: Fully 64 bit, support for 32 bit is dropped, with a minimum deployment target as OS X Lion
+* macOS: Application is sandboxed and part of the application bundle is codesigned
+* macOS: Support dark mode on macOS Mojave or higher
+* macOS: Add a dialog for choosing celestia.cfg and CelestiaResources directory
+
+Code optimization and reorganization
+* Warnings reported with `-Wall' mostly fixed or suppressed
+
+Features
+* Leap seconds added for 2012, 2015, 2017. Dropped for 1 Jan 1972
+* Add support for Lua 5.2 and 5.3, drop Lua 5.0
+* Favorites file by default is saved to user home directory:
+  - Unix: $XDG_DATA_DIR/Celestia (~/.local/cache)
+  - OS X: ~/Library/Containers/space.celestia.Celestia/Data/Library/Preferences
+  - Windows: %APPDATA% (~/AppData/Roaming)
+
+Scripting
+* Add titles for example scripts
+
+Translations:
+* Add Norwegian Bokmål translation
+
+1.6.2~beta2
+Bug fixes
+* Use "kpc" instead of "Kpc"
+* Fix markers rendering in multiview mode
+* Fix scripted orbits and rotations (broken by update to lua 5.2)
+* Fix compilation with MinGW
+
+Platform-specific changes
+* macOS: add means to migrate preferences created by old version
+* macOS: migrate memry management to ARC
+* macOS: better support for dark mode
+* macOS: update icons
+* macOS: remove own code to setup fullscreen mode
+* macOS: do not change app time zone when transforming date
+* macOS: use gettext instead of localized string
+* macOS: allow more alternative surfaces in menu
+* macOS: switch to LUA 5.1
+* Unix: fix celestia.desktop to reference celestia-gtk instead of celestia-gnome
+* Unix: fix speed in "Time" menu (10x -> 2x)
+* Windows: use SHGetFolderPathA to get Application Data directory
+* Windows: convert messages written to console to OEM CP
+* Windows: fix bug in favorites file directory construction
+* Windows: allow to create portable builds
+* Windows: don't make splash topmost window
+* Windows: make "Resolution" text in "Display mode" dialog wider
+* Windows: update to support CSPICE & LuaJIT
+* Windows: fix sorting in a star browser
+
+Translations
+* Fix incorrect translation of Sol to Seoul
+* Update French translation
+* Update Belarusian translation
+
+Documentation
+* Update INSTALL
+
+1.6.2~beta3
+Features, backported from 1.7
+* Update bolometric correction and temperature for T class
+* Add Brown Dwarf spectral class Y
+* Update temperatures for cool stars
+* Don't render corona for T5-T9 and Y class stars
+* Add binary XYZV format for sampled orbits
+
+Bug fixes
+* Fix failure if an incorrect URL is pasted
+* Don't abort if starnames.dat has not been loaded
+
+Platform-specific changes
+* Windows: fix installer script to include required *.dll
+* Windows: copy old favorites file to the new location
+* Unix: restore incorrectly removed GtkWatcher
+
+Documentation
+* Update sites in documentation (shatters.net -> celestia.space)
+
+1.6.2
+Features, backported from 1.7
+* StarDB Ver. 0x0200 support, required for spectral class Y
+
+Translations
+* Update Lithuanian, Bulgarian and Chinese translations
+
+Documentation
+* Don't mention kde3, gnome and update minimal lua version to 5.1
+
+Platform-specific changes
+* macOS: bump minimal supported version to 10.10
