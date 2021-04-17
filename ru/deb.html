@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Celestia: установка на Debian/Ubuntu</title>
+		<meta name="description" content="Есть вопросы по Celestia? На этой странице вы найдете ресурсы с ответами на часто задаваемые вопросы о Celestia." />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="/">Celestia</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="./index.html">Главная</a></li>
+							<li><a href="./download.html">Скачать</a></li>
+							<li><a href="./news.html">Новости</a></li>
+							<li>
+								<a href="#">Документация</a>
+								<ul>
+									<li><a href="./guides.html">Руководства</a></li>
+									<li><a href="./faq.html">FAQ</a></li>
+									<li><a href="./sites.html">Сайты по теме</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Дополнения</a>
+								<ul>
+									<li><a href="./addons.html">Ресурсы с дополнениями</a></li>
+									<li>
+										<a href="#">LUA Tools</a>
+										<ul>
+											<li><a href="./lua-universal-tools.html">LUA Universal Tools</a></li>
+											<li><a href="./lua-other.html">Другие</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Утилиты</a>
+										<ul>
+											<li><a href="./config-manager.html">Менеджер конфигурации Celestia</a></li>
+											<li><a href="./utilites.html">Другие</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="./gallery.html">Галерея</a></li>
+							<li><a href="/forum">Форум</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+                                                <header class="major">
+                                                        <h2>Установка Celestia в дистрибутиве GNU/Linux, созданном на основе Debian.</h2>
+                                                </header>
+
+                                                <!-- Content -->
+                                                        <section id="content">
+<pre>
+curl https://celestia.space/packages/celestia.key | sudo apt-key add -
+deb https://celestia.space/packages SUITE COMPONENT | sudo tee /etc/apt/sources.list.d/celestia.list
+</pre>
+Вместо <em>SUITE</em> нужно использовать кодовое имя дистрибутива (stretch, buster, xenial, bionic, focal), а вместо <em>COMPONENT</em>&nbsp;&mdash; <em>main</em> в случае Debian или <em>universal</em> в случае Ubuntu. 
+                                                        </section>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/CelestiaProject" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/CelestiaProject/Celestia" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:team@celestia.space" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>Celestia is Copyright &copy; 2001-<script type="text/javascript">document.write(new Date().getFullYear())</script>, Celestia Development Team.</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/skel.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
