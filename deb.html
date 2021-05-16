@@ -65,7 +65,7 @@
 							<section id="content">
 <pre>
 curl https://celestia.space/packages/celestia.key | sudo apt-key add -
-deb https://celestia.space/packages SUITE COMPONENT | sudo tee /etc/apt/sources.list.d/celestia.list
+echo deb https://celestia.space/packages SUITE COMPONENT | sudo tee /etc/apt/sources.list.d/celestia.list
 </pre>
 Replace <em>SUITE</em> with your distribution codename (stretch, buster, xenial, bionic, focal) and <em>COMPONENT</em> with <em>main</em> if you use Debian or with <em>universal</em> if you use Ubuntu.
 							</section>
