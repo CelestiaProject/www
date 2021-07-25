@@ -67,9 +67,8 @@
 curl -s https://celestia.space/packages/celestia.key | sudo apt-key add -
 echo deb https://celestia.space/packages SUITE COMPONENT | sudo tee /etc/apt/sources.list.d/celestia.list
 </pre>
-Replace <em>SUITE</em> with your distribution codename (stretch, buster, xenial, bionic, focal).
-If SUITE is either xenial or bionic, <em>COMPONENT</em> is <em>universe</em>, otherwise it's <em>main</em>.
-Both of these values can be determined by running the <pre>lsb_release -a</pre> commdand.
+<p>Replace <em>SUITE</em> with your distribution codename (stretch, buster, xenial, bionic, focal). If it's either xenial or bionic, replace <em>COMPONENT</em> with <em>universe</em>, otherwise use <em>main</em>.</p>
+<p>To determine your distribution codename, you can run the command: <pre>lsb_release -a</pre></p>
 							</section>
 					</div>
 				</div>
