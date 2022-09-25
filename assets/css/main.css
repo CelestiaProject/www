@@ -2597,35 +2597,38 @@
 					padding-top: 0;
 				}
 
-			ul.actions.fit {
-				display: table;
-				margin-left: -1em;
-				padding: 0;
-				table-layout: fixed;
-				width: calc(100% + 1em);
-			}
-
-				ul.actions.fit li {
-					display: table-cell;
-					padding: 0 0 0 1em;
-				}
-
-					ul.actions.fit li > * {
-						margin-bottom: 0;
-					}
-
-				ul.actions.fit.small {
-					margin-left: -0.5em;
-					width: calc(100% + 0.5em);
-				}
-
-					ul.actions.fit.small li {
-						padding: 0 0 0 0.5em;
-					}
-
-	dl {
-		margin: 0 0 2em 0;
-	}
+                ul.actions.fit {
+                    position: relative;
+                    display: table;
+                    align-content: center;
+                    margin-left: -1em;
+                    left: 14.15em;
+                    padding: 0;
+                    table-layout: fixed;
+                    width: 45em;
+                }
+    
+                    ul.actions.fit li {
+                        display: table-cell;
+                        padding: 0 0 0 0;
+                    }
+    
+                        ul.actions.fit li > * {
+                            margin-bottom: 0;
+                        }
+    
+                    ul.actions.fit.small {
+                        margin-left: -0.5em;
+                        width: calc(100% + 0.5em);
+                    }
+    
+                        ul.actions.fit.small li {
+                            padding: 0 0 0 0.5em;
+                        }
+    
+        dl {
+            margin: 0 0 2em 0;
+        }
 
 /* Table */
 

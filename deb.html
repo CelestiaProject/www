@@ -58,18 +58,26 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Celestia installation on Debian-based GNU/Linux distributions.</h2>
+							<h2>Celestia installation on Debian-based distributions</h2>
 						</header>
 
 						<!-- Content -->
 							<section id="content">
-<pre>
-curl -s https://celestia.space/packages/celestia.key | sudo apt-key add -
-echo deb https://celestia.space/packages SUITE COMPONENT | sudo tee /etc/apt/sources.list.d/celestia.list
-</pre>
-<p>Replace <em>SUITE</em> with your distribution codename (stretch, buster, xenial, bionic, focal). If it's either xenial or bionic, replace <em>COMPONENT</em> with <em>universe</em>, otherwise use <em>main</em>.</p>
-<p>To determine your distribution codename, you can run the command: <pre>lsb_release -a</pre></p>
-							</section>
+								<pre>
+								<code>
+> curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/Release.key
+> gpg --keyid-format long celestia.gpg
+gpg: WARNING: no command supplied.  Trying to guess what you mean ...
+pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2023-02-14]
+3FE0C0AC1FD6F1034B818A14BDF3F6ACD4D81407
+uid home:munix9 OBS Project <home:munix9@build.opensuse.org>
+> sudo mv celestia.gpg /usr/share/keyrings/celestia.asc
+> echo "deb [signed-by=/usr/share/keyrings/celestia.asc] https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list  
+> sudo apt update && sudo apt install celestia
+								</code>
+								</pre>
+								<p>Commands tested for Debian 10 Buster.</p>
+                            </section>
 					</div>
 				</div>
 
