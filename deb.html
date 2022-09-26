@@ -58,16 +58,13 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Celestia installation on GNU/Linux distributions.</h2>
+							<h2>Celestia installation on Debian GNU/Linux distributions.</h2>
 						</header>
 
 						<!-- Content -->
 							<section id="content">
-							
-<header class="minor">
-<h3>Debian Based Distributations</h3>
-</header>							
-<pre>
+														
+<pre><code>
 > curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/Release.key
 > gpg --keyid-format long celestia.gpg
 gpg: WARNING: no command supplied.  Trying to guess what you mean ...
@@ -78,42 +75,9 @@ uid                           home:munix9 OBS Project <home:munix9@build.opensus
 
 > echo "deb [signed-by=/usr/share/keyrings/celestia.asc] https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list
 > sudo apt update && sudo apt install celestia
-</pre>
+</code></pre>
 <p>Commands tested for Debian 10 Buster.</p>
 
-<header class="minor">
-<h3>Ubuntu Based Linuc Distributations</h3>
-</header>							
-<pre>
-curl https://download.opensuse.org/repositories/home:/munix9:/unstable/Ubuntu_${VERSION}/Release.key | sudo apt-key add -
-echo "deb https://download.opensuse.org/repositories/home:/munix9:/unstable/Ubuntu_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list
-sudo apt update && sudo apt install celestia
-</pre>
-<p>Commands tested for Ubuntu 18.04 Bionic Beaver/Linux Mint 19 and Ubuntu 20.04/Linux Mint 20.</p>
-
-<header class="minor">
-<h3>Open SUSE Leap/Tumbleweed Linux</h3>
-</header>							
-<pre>
-sudo zypper addrepo https://download.opensuse.org/repositories/home:munix9:unstable/openSUSE_${VERSION}/home:munix9:unstable.repo
-sudo zypper refresh
-sudo zypper install celestia
-</pre>
-<p>Where VERSION is 'Leap_15.2', 'Leap_15.3' or 'Tumbleweed'.</p>
-<p>See also the download package sites on OBS for <a href="https://software.opensuse.org/download.html?project=home:munix9:unstable&package=celestia">celestia</a> and <a href="https://software.opensuse.org/download.html?project=home:munix9:unstable&package=celestia-data">celestia-data</a>.</p>
-
-<header class="minor">
-<h3>Other GNU/Linux Distributations</h3>
-</header>
-<p>This is an experimental .appimage for Linux Distributations not in the above list:							
-<pre>
-wget https://download.opensuse.org/repositories/home:/munix9:/unstable/AppImage/celestia-1.7.0-git-x86_64.AppImage
-chmod 755 celestia-1.7.0-git-x86_64.AppImage
-</pre>
-<p>Optionally create a portable, main version-independent $HOME directory in the same folder as the AppImage file:</p>
-<pre>
-mkdir celestia-1.7.home
-</pre>
 							</section>
 					</div>
 				</div>
