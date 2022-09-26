@@ -2619,9 +2619,16 @@
 					width: calc(100% + 0.5em);
 				}
 
-					ul.actions.fit.small li {
-						padding: 0 0 0 0.5em;
-					}
+            ul.actions.fit {
+                position: relative;
+                display: table;
+                align-content: center;
+                margin-left: -1em;
+                left: 14.15em;
+                padding: 0;
+                table-layout: fixed;
+                width: 45em;
+            }
 
 	dl {
 		margin: 0 0 2em 0;
