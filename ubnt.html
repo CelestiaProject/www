@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Celestia: Debian-based</title>
+		<title>Celestia: Ubuntu-based</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -58,29 +58,23 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Celestia installation on Debian-based distributions</h2>
+							<h2>Celestia installation on Ubuntu-based distributions</h2>
 						</header>
 
 						<!-- Content -->
-							<section id="content">
-								<header class="minor">
-									<h3>On Debian 10 (buster) and derived systems:</h3>
-								</header>
-								<pre>
-								<code>
-curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/Release.key
-gpg --keyid-format long celestia.gpg
-gpg: WARNING: no command supplied.  Trying to guess what you mean ...
-pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2023-02-14]
-      3FE0C0AC1FD6F1034B818A14BDF3F6ACD4D81407
-uid                           home:munix9 OBS Project <home:munix9@build.opensuse.org>
-sudo mv celestia.gpg /usr/share/keyrings/celestia.asc
-
-echo "deb [signed-by=/usr/share/keyrings/celestia.asc] https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list  
+						<section id="content">
+							<header class="minor">
+								<h3>On Ubuntu 20.04/22.04 and derived systems:</h3>
+							</header>
+							<pre>
+							<code>
+curl https://download.opensuse.org/repositories/home:/munix9:/unstable/Ubuntu_${VERSION}/Release.key | sudo apt-key add -
+echo "deb https://download.opensuse.org/repositories/home:/munix9:/unstable/Ubuntu_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list  
 sudo apt update && sudo apt install celestia
-								</code>
-								</pre>
-							</section>
+							</code>
+							</pre>
+							<p>Where <b>VERSION</b> is 20.04 or 22.04.</p>
+						</section>
 					</div>
 				</div>
 
