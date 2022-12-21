@@ -3319,6 +3319,17 @@
 						display: none;
 					}
 
+		#eol-warning {
+			background: linear-gradient(#00000000, #ff0000 20%, #ff0000 80%, #00000000);
+			height: 3.5em;
+			left: 0;
+			line-height: 3.5em;
+			position: relative;
+			top: 3.5em;
+			width: 100%;
+			z-index: 100;
+		}
+
 	body.landing #page-wrapper {
 		padding-top: 0;
 	}
