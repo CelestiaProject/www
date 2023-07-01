@@ -1,2 +1,2 @@
-# www.celestia.space
-www.celestia.space site code
+# www.celestiaproject.space
+www.celestiaproject.space site code
