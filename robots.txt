@@ -34,4 +34,4 @@ Disallow: /cc/includes
 Disallow: /cc/js
 Disallow: /cc/pages
 Disallow: /cc/user
-Host: https://celestia.space
+Host: https://celestiaproject.space
