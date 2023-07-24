@@ -64,22 +64,23 @@
 						<!-- Content -->
 							<section id="content">
 								<header class="minor">
-									<h3>On Debian 10 (buster) and derived systems:</h3>
+									<h3>On Debian 11/12 (bullseye/bookworm) and derived systems:</h3>
 								</header>
 								<pre>
 								<code>
-curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/Release.key
+curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/Release.key
 gpg --keyid-format long celestia.gpg
 gpg: WARNING: no command supplied.  Trying to guess what you mean ...
-pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2023-02-14]
+pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2025-04-10]
       3FE0C0AC1FD6F1034B818A14BDF3F6ACD4D81407
-uid                           home:munix9 OBS Project <home:munix9@build.opensuse.org>
+uid                           home:munix9 OBS Project &lt;home:munix9@build.opensuse.org&gt;
 sudo mv celestia.gpg /usr/share/keyrings/celestia.asc
 
-echo "deb [signed-by=/usr/share/keyrings/celestia.asc] https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_10/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list  
+echo "deb [signed-by=/usr/share/keyrings/celestia.asc] https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list  
 sudo apt update && sudo apt install celestia
 								</code>
 								</pre>
+								<p>Where <b>VERSION</b> is '11' or '12'.</p>
 							</section>
 					</div>
 				</div>
