@@ -65,10 +65,32 @@
                                                 <!-- Content -->
                                                         <section id="content">
 <pre>
-curl https://celestiaproject.space/packages/celestia.key | sudo apt-key add -
-deb https://celestiaproject.space/packages SUITE COMPONENT | sudo tee /etc/apt/sources.list.d/celestia.list
+<code>
+# Download OpenGPG key for validate repository signatures
+$ wget https://celestiaproject.space/celestiaproject.key
+
+# Check the downloaded key
+$ gpg --keyid-format long  celestiaproject.key
+gpg: WARNING: no command supplied.  Trying to guess what you mean ...
+pub   rsa4096/982A4D8BCC132493 2023-11-04 [SC]
+	  0CE58AD6307B38B03C681111982A4D8BCC132493
+uid                           Celestia Development Team <team@celestiaproject.space>
+sub   rsa4096/9778A86030002CBE 2023-11-04 [E]
+
+# Import the key
+$ sudo apt-key add celestiaproject.key
+
+# Update apt sources.list
+$ echo "deb https://celestiaproject.space/${OS}/ ${SUITE} main" | sudo tee /etc/apt/sources.list.d/celestia.list
+
+# If Celestia sources are required then also add
+$ echo "deb-src https://celestiaproject.space/${OS}/ ${SUITE} main" | sudo tee -a /etc/apt/sources.list.d/celestia.list
+
+# Update apt database and install Celestia
+sudo apt update && sudo apt install celestia
+</code>
 </pre>
-Вместо <em>SUITE</em> нужно использовать кодовое имя дистрибутива (stretch, buster, xenial, bionic, focal), а вместо <em>COMPONENT</em>&nbsp;&mdash; <em>main</em> в случае Debian или <em>universal</em> в случае Ubuntu. 
+Вместо <em>OS</em>> нужно использовать <em>debian</em> или <em>ubuntu</em>, а вместо <em>SUITE</em>&nbsp;&mdash; кодовое имя дистрибутива (buster, bullseye, bookworm для Debian, или bionic, focal, jammy для Ubuntu).
                                                         </section>
 					</div>
 				</div>

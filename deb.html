@@ -64,23 +64,62 @@
 						<!-- Content -->
 							<section id="content">
 								<header class="minor">
-									<h3>On Debian 11/12 (bullseye/bookworm) and derived systems:</h3>
+									<h3>Celestia 1.6.4 on Debian 10/11/12 (buster/bullseye/bookworm) and derived systems:</h3>
 								</header>
 								<pre>
 								<code>
-curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/Release.key
-gpg --keyid-format long celestia.gpg
+# Download OpenGPG key for validate repository signatures
+$ wget https://celestiaproject.space/celestiaproject.key
+
+# Check the downloaded key
+$ gpg --keyid-format long  celestiaproject.key
+gpg: WARNING: no command supplied.  Trying to guess what you mean ...
+pub   rsa4096/982A4D8BCC132493 2023-11-04 [SC]
+      0CE58AD6307B38B03C681111982A4D8BCC132493
+uid                           Celestia Development Team <team@celestiaproject.space>
+sub   rsa4096/9778A86030002CBE 2023-11-04 [E]
+
+# Import the key
+$ sudo apt-key add celestiaproject.key
+
+# Update apt sources.list
+$ echo "deb https://celestiaproject.space/debian/ ${SUITE} main" | sudo tee /etc/apt/sources.list.d/celestia.list
+
+# If Celestia sources are required then also add
+$ echo "deb-src https://celestiaproject.space/debian/ ${SUITE} main" | sudo tee -a /etc/apt/sources.list.d/celestia.list
+
+# Update apt database and install Celestia
+sudo apt update && sudo apt install celestia
+								</code>
+								</pre>
+								<p>Where <b>SUITE</b> is <em>buster</em>, <em>bullseye</em> or <em>bookworm</em> for 10, 11 or 12 accordingly.</p>
+
+								<header class="minor">
+									<h3>Celestia 1.7 on Debian 11/12 (bullseye/bookworm) and derived systems:</h3>
+								</header>
+								<pre>
+								<code>
+# Download OpenGPG key for validate repository signatures
+$ curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/Release.key
+
+# Check the downloaded key
+$ gpg --keyid-format long celestia.gpg
 gpg: WARNING: no command supplied.  Trying to guess what you mean ...
 pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2025-04-10]
       3FE0C0AC1FD6F1034B818A14BDF3F6ACD4D81407
 uid                           home:munix9 OBS Project &lt;home:munix9@build.opensuse.org&gt;
-sudo mv celestia.gpg /usr/share/keyrings/celestia.asc
 
-echo "deb [signed-by=/usr/share/keyrings/celestia.asc] https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list  
+# Import the key
+$ sudo apt-key add celestia.gpg
+
+# Update apt sources.list
+echo "deb https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list
+
+# Update apt database and install Celestia
 sudo apt update && sudo apt install celestia
 								</code>
 								</pre>
-								<p>Where <b>VERSION</b> is '11' or '12'.</p>
+								<p>Where <b>VERSION</b> is 11 or 12.</p>
 							</section>
 					</div>
 				</div>
