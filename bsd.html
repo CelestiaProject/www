@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Celestia: BSD Systems</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="/">Celestia</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="download.html">Download</a></li>
+							<li><a href="news.html">News</a></li>
+							<li>
+								<a href="#">Documentation</a>
+								<ul>
+									<li><a href="guides.html">Celestia Guides</a></li>
+									<li><a href="faq.html">FAQ</a></li>
+									<li><a href="sites.html">Related Sites</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Add-Ons</a>
+								<ul>
+									<li><a href="addons.html">Download Links</a></li>
+									<li>
+										<a href="#">LUA Tools</a>
+										<ul>
+											<li><a href="lua-universal-tools.html">LUA Universal Tools</a></li>
+											<li><a href="lua-other.html">Other</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Utilites</a>
+										<ul>
+											<li><a href="config-manager.html">Celestia Config Manager</a></li>
+											<li><a href="utilites.html">Other</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="gallery.html">Gallery</a></li>
+							<li><a href="/forum">Forum</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Celestia installation on FreeBSD Systems</h2>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+								<header class="minor">
+									<h3>Celestia 1.6.1 via pkg:</h3>
+								</header>
+								<pre>
+								<code>
+# Celestia's package can be installed one of multiple ways on FreeBSD systems via pkg(8)
+$ pkg install celestia
+# or
+$ pkg install/astro celestia
+# or
+$ pkg install celestia-glut
+
+# Or with the gtk front end
+$ pkg install celestia-gtk
+# or
+$ pkg install astro/celestia-gtk
+								</code>
+								</pre>
+
+								<header class="minor">
+									<h3>Celestia 1.6.1 via ports:</h3>
+								</header>
+								<pre>
+								<code>
+# Celestia 1.6.1 can be installed via ports with
+$ cd /usr.ports/astro/celestia/ && make install clean
+
+# or for gtk
+$ cd /usr.ports/astro/celestia-gtk/ && make install clean
+								</code>
+								</pre>
+
+								<!-- Install instructions from Celestia's enrty on Fresh ports: https://www.freshports.org/astro/celestia/ and https://www.freshports.org/astro/celestia-gtk/ -->
+
+							</section>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/CelestiaProject" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/CelestiaProject/Celestia" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:team@celestiaproject.space" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>Celestia is Copyright &copy; 2001-<script type="text/javascript">document.write(new Date().getFullYear())</script>, Celestia Development Team.</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
