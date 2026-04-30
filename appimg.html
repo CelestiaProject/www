@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Celestia: Other distros</title>
+		<title>Celestia: AppImage</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -60,26 +60,32 @@
 
 						<!-- Content -->
 							<section id="content">
+								<p>If you are running a distribution other than the ones we have mentioned, try the experimental portable AppImage (also see <a href="https://github.com/CelestiaProject/Celestia/issues/333">Issue #333</a> on our GitHub).</p>
 								<header class="minor">
-									<h3>On openSUSE Leap/Tumbleweed:</h3>
-								</header>							
+									<h3>Celestia 1.6 AppImage:</h3>
+								</header>
+								<p><a class="icon" href="https://build.opensuse.org/package/show/home:munix9:celestia:1.6/celestia" target="obs_celestia"><img src="https://build.opensuse.org/projects/home:munix9:celestia:1.6/packages/celestia/badge.svg?type=percent"></a></p>
 								<pre>
 								<code>
-sudo zypper addrepo https://download.opensuse.org/repositories/home:munix9:unstable/${VERSION}/home:munix9:unstable.repo
-sudo zypper refresh
-sudo zypper install celestia
+wget -O celestia-1.6-x86_64.AppImage https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.6/AppImage/celestia-latest-x86_64.AppImage
+chmod 755 celestia-1.6-x86_64.AppImage
 								</code>
 								</pre>
-								<p>Where <b>VERSION</b> is '15.5', '15.6' or 'openSUSE_Tumbleweed'.</p>
-								<p>See also the download package sites on OBS for <a href="https://software.opensuse.org/download.html?project=home:munix9:unstable&package=celestia">celestia</a> and <a href="https://software.opensuse.org/download.html?project=home:munix9:unstable&package=celestia-data">celestia-data</a>.</p>
-								<header class="minor">
-									<h3>On other GNU/Linux distributions:</h3>
-								</header>
-								<p>If you are running a distribution other than the ones we have mentioned, try the experimental portable AppImage (Also see <a href="https://github.com/CelestiaProject/Celestia/issues/333">Issue #333</a> on our GitHub):</p>
+								<p>Optionally create a portable, main version-independent $HOME directory in the same folder as the AppImage file:</p>
 								<pre>
 								<code>
-wget -O celestia-1.7.0-git-x86_64.AppImage https://download.opensuse.org/repositories/home:/munix9:/unstable/AppImage/celestia-latest-x86_64.AppImage
-chmod 755 celestia-1.7.0-git-x86_64.AppImage
+mkdir celestia-1.6.home
+								</code>
+								</pre>
+
+								<header class="minor">
+									<h3>Celestia 1.7 AppImage:</h3>
+								</header>
+								<p><a class="icon" href="https://build.opensuse.org/package/show/home:munix9:celestia:1.7/celestia" target="obs_celestia"><img src="https://build.opensuse.org/projects/home:munix9:celestia:1.7/packages/celestia/badge.svg?type=percent"></a></p>
+								<pre>
+								<code>
+wget -O celestia-1.7-x86_64.AppImage https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/AppImage/celestia-latest-x86_64.AppImage
+chmod 755 celestia-1.7-x86_64.AppImage
 								</code>
 								</pre>
 								<p>Optionally create a portable, main version-independent $HOME directory in the same folder as the AppImage file:</p>

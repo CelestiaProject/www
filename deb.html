@@ -92,17 +92,18 @@ sudo apt update && sudo apt install celestia
 								<p>Where <b>SUITE</b> is <em>buster</em>, <em>bullseye</em> or <em>bookworm</em> for 10, 11 or 12 accordingly.</p>
 
 								<header class="minor">
-									<h3>Celestia 1.7 on Debian 11/12 (bullseye/bookworm) and derived systems:</h3>
+									<h3>Celestia 1.7 on Debian 12/13/Testing (bookworm/trixie/forky) and derived systems:</h3>
 								</header>
+								<p><a class="icon" href="https://build.opensuse.org/package/show/home:munix9:celestia:1.7/celestia" target="obs_celestia"><img src="https://build.opensuse.org/projects/home:munix9:celestia:1.7/packages/celestia/badge.svg?type=percent"></a></p>
 								<pre>
 								<code>
 # Download OpenGPG key for validate repository signatures
-$ curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/Release.key
+$ curl -fsSL -o celestia.gpg https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/Debian_${VERSION}/Release.key
 
 # Check the downloaded key
 $ gpg --keyid-format long celestia.gpg
 gpg: WARNING: no command supplied.  Trying to guess what you mean ...
-pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2025-04-10]
+pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2027-06-06]
       3FE0C0AC1FD6F1034B818A14BDF3F6ACD4D81407
 uid                           home:munix9 OBS Project &lt;home:munix9@build.opensuse.org&gt;
 
@@ -110,13 +111,14 @@ uid                           home:munix9 OBS Project &lt;home:munix9@build.open
 $ sudo apt-key add celestia.gpg
 
 # Update apt sources.list
-echo "deb https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list
+echo "deb https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/Debian_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list
 
 # Update apt database and install Celestia
 sudo apt update && sudo apt install celestia
 								</code>
 								</pre>
-								<p>Where <b>VERSION</b> is 11 or 12.</p>
+								<p>Where <b>VERSION</b> is 12, 13 or Testing.</p>
+								<p>See also the download package site on OBS for <a href="https://software.opensuse.org/download.html?project=home:munix9:celestia:1.7&package=celestia" target="obs_celestia">celestia</a>.</p>
 							</section>
 					</div>
 				</div>
