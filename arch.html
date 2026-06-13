@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Celestia: Arch Linux</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="/">Celestia</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="download.html">Download</a></li>
+							<li><a href="news.html">News</a></li>
+							<li>
+								<a href="#">Documentation</a>
+								<ul>
+									<li><a href="guides.html">Celestia Guides</a></li>
+									<li><a href="faq.html">FAQ</a></li>
+									<li><a href="sites.html">Related Sites</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Add-Ons</a>
+								<ul>
+									<li><a href="addons.html">Download Links</a></li>
+									<li>
+										<a href="#">LUA Tools</a>
+										<ul>
+											<li><a href="lua-universal-tools.html">LUA Universal Tools</a></li>
+											<li><a href="lua-other.html">Other</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Utilites</a>
+										<ul>
+											<li><a href="config-manager.html">Celestia Config Manager</a></li>
+											<li><a href="utilites.html">Other</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="gallery.html">Gallery</a></li>
+							<li><a href="/forum">Forum</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Celestia installation on Arch Linux</h2>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+								<header class="minor">
+									<h3>Celestia 1.7 on Arch Linux:</h3>
+								</header>
+								<p><a class="icon" href="https://build.opensuse.org/package/show/home:munix9:celestia:1.7/celestia" target="obs_celestia"><img src="https://build.opensuse.org/projects/home:munix9:celestia:1.7/packages/celestia/badge.svg?type=percent"></a></p>
+								<p>Edit <code>/etc/pacman.conf</code> and add the following <em>(note that the order of repositories in pacman.conf is important, since pacman always downloads the first found package)</em>:</p>
+								<pre>
+								<code>
+[home_munix9_celestia_1.7_Arch]
+Server = https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/Arch/$arch
+								</code>
+								</pre>
+								<p>Then run the following as <strong>root</strong></p>
+								<pre>
+								<code>
+key=$(curl -fsSL https://download.opensuse.org/repositories/home:munix9:celestia:1.7/Arch/$(uname -m)/home_munix9_celestia_1.7_Arch.key)
+fingerprint=$(gpg --quiet --with-colons --import-options show-only --import --fingerprint <<< "${key}" | awk -F: '$1 == "fpr" { print $10 }')
+
+pacman-key --init
+pacman-key --add - <<< "${key}"
+pacman-key --lsign-key "${fingerprint}"
+
+pacman -Sy home_munix9_celestia_1.7_Arch/celestia
+								</code>
+								</pre>
+								<p>See also the download package site on OBS for <a href="https://software.opensuse.org/download.html?project=home:munix9:celestia:1.7&package=celestia" target="obs_celestia">celestia</a>.</p>
+							</section>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/CelestiaProject" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/CelestiaProject/Celestia" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:team@celestiaproject.space" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>Celestia is Copyright &copy; 2001-<script type="text/javascript">document.write(new Date().getFullYear())</script>, Celestia Development Team.</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
