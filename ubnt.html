@@ -97,7 +97,7 @@ sudo apt update && sudo apt install celestia
 							<p><a class="icon" href="https://build.opensuse.org/package/show/home:munix9:celestia:1.7/celestia" target="obs_celestia"><img src="https://build.opensuse.org/projects/home:munix9:celestia:1.7/packages/celestia/badge.svg?type=percent"></a></p>
 							<pre>
 							<code>
-curl https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/xUbuntu_${VERSION}/Release.key | sudo apt-key add -
+curl https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/xUbuntu_${VERSION}/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/celestia-obs.gpg > /dev/null
 echo "deb https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/xUbuntu_${VERSION}/ ./" | sudo tee /etc/apt/sources.list.d/celestia-obs.list
 sudo apt update && sudo apt install celestia
 							</code>
