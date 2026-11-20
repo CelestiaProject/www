@@ -110,7 +110,7 @@ uid           [ unknown] home:munix9 OBS Project &lt;home:munix9@build.opensuse.
 $ sudo install -D -o root -g root -m 644 celestia.gpg /etc/apt/keyrings/celestia.gpg && rm celestia.gpg
 
 # Add apt repository (deb822 format)
-$ cat <<EOF | sudo tee /etc/apt/sources.list.d/celestia-obs.sources
+$ cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/celestia-obs.sources
 Types: deb
 URIs: https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/Debian_${VERSION}/
 Suites: /
