@@ -104,7 +104,7 @@ $ curl -fsSL https://download.opensuse.org/repositories/home:/munix9:/celestia:/
 $ gpg --no-default-keyring --keyring ./celestia.gpg --list-keys --keyid-format long
 pub   rsa2048/BDF3F6ACD4D81407 2014-06-09 [SC] [expires: 2027-06-06]
       3FE0C0AC1FD6F1034B818A14BDF3F6ACD4D81407
-uid           [ unknown] home:munix9 OBS Project <home:munix9@build.opensuse.org>
+uid           [ unknown] home:munix9 OBS Project &lt;home:munix9@build.opensuse.org&gt;
 
 # Move the key to the system keyrings directory
 $ sudo install -D -o root -g root -m 644 celestia.gpg /etc/apt/keyrings/celestia.gpg && rm celestia.gpg
